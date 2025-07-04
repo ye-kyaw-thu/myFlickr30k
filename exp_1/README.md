@@ -84,3 +84,9 @@ There are 7 experiment folders under the `exp_1/` directory. These are named acc
 - Update `captioner_my.py` (currently supports only RNN and LSTM)  
 - Experiment with word-segmented Myanmar captions  
 
+## References
+
+- NLLB API: [https://github.com/winstxnhdw/nllb-api](https://github.com/winstxnhdw/nllb-api)
+- No Language Left Behind (NLLB): [https://github.com/facebookresearch/fairseq/tree/nllb](https://github.com/facebookresearch/fairseq/tree/nllb)
+- NLLB Experiment Log: [https://github.com/ye-kyaw-thu/error-overflow/blob/master/nllb-exp.md](https://github.com/ye-kyaw-thu/error-overflow/blob/master/nllb-exp.md)
+- [https://github.com/nirajankarki5/Flickr30k-Image-Caption-Generator-Using-Deep-Learning](https://github.com/nirajankarki5/Flickr30k-Image-Caption-Generator-Using-Deep-Learning)
