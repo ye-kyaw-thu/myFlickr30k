@@ -1,0 +1,59 @@
+# File Information
+
+## captions.txt
+
+```
+(base) ye@lst-gpu-server-197:~/ye/exp/gpt-mt/nllb/data/flickr30k$ wc captions.txt
+  40460  517166 3395237 captions.txt
+(base) ye@lst-gpu-server-197:~/ye/exp/gpt-mt/nllb/data/flickr30k$ head captions.txt
+1000268201_693b08cb0e.jpg#0     A child in a pink dress is climbing up a set of stairs in an entry way .
+1000268201_693b08cb0e.jpg#1     A girl going into a wooden building .
+1000268201_693b08cb0e.jpg#2     A little girl climbing into a wooden playhouse .
+1000268201_693b08cb0e.jpg#3     A little girl climbing the stairs to her playhouse .
+1000268201_693b08cb0e.jpg#4     A little girl in a pink dress going into a wooden cabin .
+1001773457_577c3a7d70.jpg#0     A black dog and a spotted dog are fighting
+1001773457_577c3a7d70.jpg#1     A black dog and a tri-colored dog playing with each other on the road .
+1001773457_577c3a7d70.jpg#2     A black dog and a white dog with brown spots are staring at each other in the street .
+1001773457_577c3a7d70.jpg#3     Two dogs of different breeds looking at each other on the road .
+1001773457_577c3a7d70.jpg#4     Two dogs on pavement moving toward each other .
+(base) ye@lst-gpu-server-197:~/ye/exp/gpt-mt/nllb/data/flickr30k$
+```
+
+## f2.my  
+
+```
+(base) ye@lst-gpu-server-197:~/ye/exp/gpt-mt/nllb/flickr30k$ head f2.my
+A child in a pink dress is climbing up a set of stairs in an entry way .        ပန်းရောင်ဝတ်စုံဝတ်ထားတဲ့ ကလေးတစ်ယောက်က ဝင်ပေါက်လမ်းမှာ လှေကားတစ်စီးတက်နေတယ်။
+A girl going into a wooden building .   သစ်သားအဆောက်အအုံထဲ ဝင်နေတဲ့ မိန်းကလေး။
+A little girl climbing into a wooden playhouse .        သစ်သားကစားရုံထဲ တက်လာတဲ့ ကောင်မလေးတစ်ယောက်
+A little girl climbing the stairs to her playhouse .    သူမရဲ့ ကစားခန်းဆီ လှေကားထစ်တက်နေတဲ့ ကလေးမလေးတစ်ယောက်
+A little girl in a pink dress going into a wooden cabin .       ပန်းရောင်ဝတ်စုံနဲ့ သစ်သားအိမ်လေးထဲ ဝင်နေတဲ့ မိန်းကလေးလေး။
+A black dog and a spotted dog are fighting      ခွေးမည်းနဲ့ ခွေးအစက်တွေ တိုက်နေကြတာ
+A black dog and a tri-colored dog playing with each other on the road . ခွေးမည်းနဲ့ ခွေးသုံးမျိုး လမ်းပေါ်မှာ ကစားနေကြတယ်။
+A black dog and a white dog with brown spots are staring at each other in the street .  အနက်ရောင်ခွေးနဲ့ အညိုရောင်အစက်တွေပါတဲ့ အဖြူရောင်ခွေဟာ လမ်းပေါ်မှာ အချင်းချင်း ငေးကြည့်နေကြတယ်။
+Two dogs of different breeds looking at each other on the road .        လမ်းပေါ်မှာ မတူညီတဲ့ ခွေးနှစ်ကောင် အချင်းချင်းကြည့်နေတာပါ။
+Two dogs on pavement moving toward each other . လမ်းဘေးမှာ ခွေးနှစ်ကောင် အချင်းချင်း ချဉ်းကပ်နေကြတယ်။
+(base) ye@lst-gpu-server-197:~/ye/exp/gpt-mt/nllb/flickr30k$ pwd
+/home/ye/ye/exp/gpt-mt/nllb/flickr30k
+(base) ye@lst-gpu-server-197:~/ye/exp/gpt-mt/nllb/flickr30k$ wc f2.my
+  40460  662630 9539480 f2.my
+```
+
+## my_captions.txt  
+
+```
+(base) ye@lst-hpc3090:~/intern3/exp/captioning/data/flickr30k_images$ wc my_captions.txt
+  40460  858582 8498780 my_captions.txt
+(base) ye@lst-hpc3090:~/intern3/exp/captioning/data/flickr30k_images$ head my_captions.txt
+1000268201.jpg  ပန်း ရောင် ဝတ် စုံ ဝတ် ထား တဲ့ က လေး တစ် ယောက် က ဝင် ပေါက် လမ်း မှာ လှေ ကား တစ် စီး တက် နေ တယ် ။
+1000268201.jpg  သစ် သား အ ဆောက် အ အုံ ထဲ ဝင် နေ တဲ့ မိန်း က လေး ။
+1000268201.jpg  သစ် သား က စား ရုံ ထဲ တက် လာ တဲ့ ကောင် မ လေး တစ် ယောက်
+1000268201.jpg  သူ မ ရဲ့ က စား ခန်း ဆီ လှေ ကား ထစ် တက် နေ တဲ့ က လေး မ လေး တစ် ယောက်
+1000268201.jpg  ပန်း ရောင် ဝတ် စုံ နဲ့ သစ် သား အိမ် လေး ထဲ ဝင် နေ တဲ့ မိန်း က လေး လေး ။
+1001773457.jpg  ခွေး မည်း နဲ့ ခွေး အ စက် တွေ တိုက် နေ ကြ တာ
+1001773457.jpg  ခွေး မည်း နဲ့ ခွေး သုံး မျိုး လမ်း ပေါ် မှာ က စား နေ ကြ တယ် ။
+1001773457.jpg  အ နက် ရောင် ခွေး နဲ့ အ ညို ရောင် အ စက် တွေ ပါ တဲ့ အ ဖြူ ရောင် ခွေ ဟာ လမ်း ပေါ် မှာ အ ချင်း ချင်း ငေး ကြ ည့် နေ ကြ တယ် ။
+1001773457.jpg  လမ်း ပေါ် မှာ မ တူ ညီ တဲ့ ခွေး နှစ် ကောင် အ ချင်း ချင်း ကြ ည့် နေ တာ ပါ ။
+1001773457.jpg  လမ်း ဘေး မှာ ခွေး နှစ် ကောင် အ ချင်း ချင်း ချဉ်း ကပ် နေ ကြ တယ် ။
+(base) ye@lst-hpc3090:~/intern3/exp/captioning/data/flickr30k_images$
+```
