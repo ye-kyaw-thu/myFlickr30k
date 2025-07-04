@@ -77,3 +77,10 @@ There are 7 experiment folders under the `exp_1/` directory. These are named acc
 5. `resnext50_ep100`  
 6. `resnext101_ep100`  
 7. `vgg16_ep100`
+
+## To Do
+
+- Manually check the translated Myanmar sentences  
+- Update `captioner_my.py` (currently supports only RNN and LSTM)  
+- Experiment with word-segmented Myanmar captions  
+
