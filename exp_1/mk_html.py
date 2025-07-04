@@ -1,3 +1,9 @@
+"""
+for converting predictions.txt file into HTML format
+written by Ye, LST Lab., Myanmar
+last updated: 5 July 2025
+"""
+
 import os
 import argparse
 import re
@@ -11,66 +17,60 @@ def parse_predictions_file(text_file):
     with open(text_file, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # First split by the detailed predictions divider
-    main_parts = re.split(r'DETAILED PREDICTIONS:\n={80}\n', content)
+    # Normalize separators
+    content = content.replace('\r\n', '\n')
+    parts = re.split(r'DETAILED PREDICTIONS:\n={3,}\n', content)
     
-    # Parse overall metrics if exists
-    if len(main_parts) > 0 and main_parts[0].strip().startswith('OVERALL EVALUATION METRICS'):
-        metrics_part = main_parts[0].split('\n')[2:]  # Skip header and divider
-        for line in metrics_part:
+    # Parse overall metrics
+    if len(parts) >= 1 and parts[0].strip().startswith('OVERALL EVALUATION METRICS'):
+        for line in parts[0].splitlines():
             if ':' in line:
                 metric, value = line.split(':', 1)
                 overall_metrics[metric.strip()] = value.strip()
     
-    # Parse image sections if detailed predictions exist
-    if len(main_parts) > 1:
-        # Split individual image sections (including the first one)
-        image_sections = re.split(r'\n={80}\n', main_parts[1])
+    if len(parts) < 2:
+        return overall_metrics, []  # No detailed predictions
+    
+    # Now parse individual image blocks
+    image_blocks = re.split(r'\n={3,}\n', parts[1].strip())
+    
+    for block in image_blocks:
+        lines = [line.strip() for line in block.strip().splitlines() if line.strip()]
+        if not lines or not lines[0].startswith('Image:'):
+            continue
         
-        for section in image_sections:
-            section = section.strip()
-            if not section.startswith('Image:'):
-                continue
-                
-            lines = [line.strip() for line in section.split('\n') if line.strip()]
-            image_info = {
-                'filename': re.search(r'Image:\s+([^\s]+\.jpg)', lines[0]).group(1),
-                'predictions': [],
-                'references': [],
-                'metrics': {}
-            }
-            
-            current_line = 1
-            
-            # Parse predictions
-            if current_line < len(lines) and lines[current_line].startswith('Predictions:'):
-                current_line += 1
-                while (current_line < len(lines) and 
-                       not lines[current_line].startswith('References:')):
-                    image_info['predictions'].append(lines[current_line])
-                    current_line += 1
-            
-            # Parse references
-            if current_line < len(lines) and lines[current_line].startswith('References:'):
-                current_line += 1
-                while (current_line < len(lines) and 
-                       not lines[current_line].startswith('Metrics for this image:')):
+        image_info = {
+            'filename': re.search(r'Image:\s+([^\s]+)', lines[0]).group(1),
+            'predictions': [],
+            'references': [],
+            'metrics': {}
+        }
+        
+        current_line = 1
+        
+        # Parse predictions
+        while current_line < len(lines) and not lines[current_line].startswith('References:'):
+            if re.match(r'^\d+\.\s', lines[current_line]):
+                image_info['predictions'].append(lines[current_line])
+            current_line += 1
+        
+        # Parse references
+        if current_line < len(lines) and lines[current_line].startswith('References:'):
+            current_line += 1
+            while current_line < len(lines) and not lines[current_line].startswith('Metrics for this image:'):
+                if re.match(r'^\d+\.\s', lines[current_line]):
                     image_info['references'].append(lines[current_line])
-                    current_line += 1
-            
-            # Parse metrics
-            if current_line < len(lines) and lines[current_line].startswith('Metrics for this image:'):
                 current_line += 1
-                while current_line < len(lines) and ':' in lines[current_line]:
-                    # Handle both ": " and ":" cases
-                    if ': ' in lines[current_line]:
-                        metric, value = lines[current_line].split(': ', 1)
-                    else:
-                        metric, value = lines[current_line].split(':', 1)
-                    image_info['metrics'][metric.strip()] = value.strip()
-                    current_line += 1
-            
-            sections.append(image_info)
+        
+        # Parse metrics
+        if current_line < len(lines) and lines[current_line].startswith('Metrics for this image:'):
+            current_line += 1
+            while current_line < len(lines) and ':' in lines[current_line]:
+                metric, value = lines[current_line].split(':', 1)
+                image_info['metrics'][metric.strip()] = value.strip()
+                current_line += 1
+        
+        sections.append(image_info)
     
     return overall_metrics, sections
 
@@ -176,4 +176,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
