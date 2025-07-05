@@ -86,7 +86,10 @@ There are 7 experiment folders under the `exp_1/` directory. These are named acc
 
 ## References
 
+- Denotation Graph Homepage: [https://shannon.cs.illinois.edu/DenotationGraph/](https://shannon.cs.illinois.edu/DenotationGraph/)
 - NLLB API: [https://github.com/winstxnhdw/nllb-api](https://github.com/winstxnhdw/nllb-api)
 - No Language Left Behind (NLLB): [https://github.com/facebookresearch/fairseq/tree/nllb](https://github.com/facebookresearch/fairseq/tree/nllb)
 - NLLB Experiment Log: [https://github.com/ye-kyaw-thu/error-overflow/blob/master/nllb-exp.md](https://github.com/ye-kyaw-thu/error-overflow/blob/master/nllb-exp.md)
+- Flickr Image Dataset: [https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset)
 - [https://github.com/nirajankarki5/Flickr30k-Image-Caption-Generator-Using-Deep-Learning](https://github.com/nirajankarki5/Flickr30k-Image-Caption-Generator-Using-Deep-Learning)
+- [https://github.com/reppertj/image-captioning](https://github.com/reppertj/image-captioning)
