@@ -94,6 +94,7 @@ There are 7 experiment folders under the `exp_1/` directory. These are named acc
 - [https://github.com/nirajankarki5/Flickr30k-Image-Caption-Generator-Using-Deep-Learning](https://github.com/nirajankarki5/Flickr30k-Image-Caption-Generator-Using-Deep-Learning)
 - [https://github.com/reppertj/image-captioning](https://github.com/reppertj/image-captioning)
 - Denotation Graph Paper Bibtex:
+```
   @article{young2014image,
   title={From image descriptions to visual denotations: New similarity metrics for semantic inference over event descriptions},
   author={Young, Peter and Lai, Alice and Hodosh, Micah and Hockenmaier, Julia},
@@ -103,4 +104,5 @@ There are 7 experiment folders under the `exp_1/` directory. These are named acc
   year={2014},
   publisher={MIT Press}
 }
+```
 
