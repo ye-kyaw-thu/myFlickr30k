@@ -7,3 +7,20 @@ The original Flickr30k dataset consists of 31,783 images collected from Flickr w
 **Current status**: 
 - Under active development
 - Manually verifying and correcting the automatic translation outputs
+
+## Citation  
+
+If you have used the myFlickr30k dataset or code, please cite it as follows:  
+(myFlickr30k ကို သုံးဖြစ်ကြရင် အောက်ပါ citation လုပ်ပေးပါ။ ကျေးဇူးပါ။)    
+
+```
+@misc{myFlickr30k_2025,
+  author       = {Ye Kyaw Thu},
+  title        = {myFlickr30k},
+  month        = {7},
+  year         = {2025},
+  url          = {https://github.com/ye-kyaw-thu/myFlickr30k},
+  note         = {Accessed Date: yyyy-mm-dd},
+  institution  = {LU Lab., Myanmar}
+}
+```
